@@ -3,6 +3,7 @@
 import bpy
 import csv
 
+#Path for extracted data from .bvh file
 name = 'D:/GitHub/02_ExtractDataFromBlender/bvh_data'
 txt_file = name + '.txt'
 csv_file = name + '.csv'
@@ -13,6 +14,8 @@ header.writerow(csv_header)
 matrix_csv.close()
 sce = bpy.context.scene
 ob = bpy.context.object
+
+#Range from start and end frame in Blender
 for f in range(sce.frame_start, sce.frame_end+1):
      matrix_file = open(txt_file,'a')
      matrix_csv = open(csv_file,'a', newline = '')
